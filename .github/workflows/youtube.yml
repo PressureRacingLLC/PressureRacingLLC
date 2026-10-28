@@ -1,0 +1,31 @@
+# Pulls the newest uploads from the channel's RSS feed into README.md.
+name: Latest YouTube
+
+on:
+  schedule:
+    - cron: "40 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh video block
+        run: python scripts/youtube.py UCQQfmcguM0ptKZTCPkl1s0A 3
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md && exit 0
+          git commit -am "Update latest YouTube videos"
+          git push
