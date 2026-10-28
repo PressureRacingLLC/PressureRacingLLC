@@ -13,7 +13,7 @@
 <table align="center">
   <tr>
     <td align="center" width="33%"><img src="assets/logos/tiles/pr-monogram-white.png" width="200" alt="PR monogram with star, white"></td>
-    <td align="center" width="33%"><img src="assets/logos/tiles/pr-spin.gif" width="200" alt="Spinning PR monogram"></td>
+    <td align="center" width="33%"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/tiles/pr-spin.gif"><img src="assets/logos/tiles/pr-spin.gif" width="200" alt="Spinning PR monogram"></picture></td>
     <td align="center" width="33%"><img src="assets/logos/tiles/pr-crosshair-white.png" width="200" alt="Pressure Racing crosshair mark, white"></td>
   </tr>
   <tr>
@@ -87,8 +87,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Creact%2Cvite%2Cthreejs%2Ctailwind%2Cjava%2Cmaven%2Cnodejs%2Cgraphql%2Cgithubactions&theme=dark&perline=10">
-    <img src="https://skillicons.dev/icons?i=ts,react,vite,threejs,tailwind,java,maven,nodejs,graphql,githubactions&theme=light&perline=10" alt="TypeScript, React, Vite, Three.js, Tailwind CSS, Java, Maven, Node.js, GraphQL, GitHub Actions">
+    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Creact%2Cvite%2Cthreejs%2Ctailwind%2Cjava%2Cmaven%2Cnodejs%2Cgraphql%2Cpy%2Cgithubactions&theme=dark&perline=11">
+    <img src="https://skillicons.dev/icons?i=ts,react,vite,threejs,tailwind,java,maven,nodejs,graphql,py,githubactions&theme=light&perline=11" alt="TypeScript, React, Vite, Three.js, Tailwind CSS, Java, Maven, Node.js, GraphQL, Python, GitHub Actions">
   </picture>
   <br>
   <img src="https://img.shields.io/badge/Shopify%20Hydrogen-0a0b0f?style=for-the-badge&logo=shopify&logoColor=f800e0" alt="Shopify Hydrogen">
