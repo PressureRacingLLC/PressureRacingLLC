@@ -8,16 +8,16 @@
 
 <table align="center">
   <tr>
-    <td align="center" width="200">
+    <td align="center" width="33%">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-circle-white.png">
         <img src="assets/logos/pr-circle-black.png" width="120" alt="Pressure Racing circle monogram">
       </picture>
     </td>
-    <td align="center" width="200">
+    <td align="center" width="33%">
       <img src="assets/logos/pr-spin.gif" width="160" alt="Spinning PR monogram with magenta star">
     </td>
-    <td align="center" width="200">
+    <td align="center" width="33%">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-crosshair-pink-dark.png">
         <img src="assets/logos/pr-crosshair-black.png" width="120" alt="Pressure Racing crosshair mark">
@@ -25,19 +25,19 @@
     </td>
   </tr>
   <tr>
-    <td align="center" width="200">
+    <td align="center" width="33%">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-wordmark-pink.png">
         <img src="assets/logos/pr-wordmark-black.png" width="180" alt="Pressure Racing script wordmark">
       </picture>
     </td>
-    <td align="center" width="200">
+    <td align="center" width="33%">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-worldwide-white.png">
         <img src="assets/logos/pr-worldwide-black.png" width="120" alt="Pressure Racing WorldWide globe mark">
       </picture>
     </td>
-    <td align="center" width="200">
+    <td align="center" width="33%">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-factory-white.png">
         <img src="assets/logos/pr-factory-black.png" width="180" alt="Pressure! Racing Factory lockup">
@@ -64,9 +64,9 @@
 
 <table align="center">
   <tr>
-    <td align="center" width="200"><a href="https://pressureracing.com/shop"><img src="assets/merch/pr-12-inch.png" width="180" alt="PR monogram decal, 12 inch"></a><br><sub><b>PR 12"</b></sub></td>
-    <td align="center" width="200"><a href="https://pressureracing.com/shop"><img src="assets/merch/worldwide-12-inch.png" width="180" alt="WorldWide globe decal, 12 inch"></a><br><sub><b>WORLDWIDE 12"</b></sub></td>
-    <td align="center" width="200"><a href="https://pressureracing.com/shop"><img src="assets/merch/crosshair-20-inch.png" width="180" alt="Crosshair decal, 20 inch"></a><br><sub><b>CROSSHAIR 20"</b></sub></td>
+    <td align="center" width="33%"><a href="https://pressureracing.com/shop"><img src="assets/merch/pr-12-inch.png" width="180" alt="PR monogram decal, 12 inch"></a><br><sub><b>PR 12"</b></sub></td>
+    <td align="center" width="33%"><a href="https://pressureracing.com/shop"><img src="assets/merch/worldwide-12-inch.png" width="180" alt="WorldWide globe decal, 12 inch"></a><br><sub><b>WORLDWIDE 12"</b></sub></td>
+    <td align="center" width="33%"><a href="https://pressureracing.com/shop"><img src="assets/merch/crosshair-20-inch.png" width="180" alt="Crosshair decal, 20 inch"></a><br><sub><b>CROSSHAIR 20"</b></sub></td>
   </tr>
 </table>
 
