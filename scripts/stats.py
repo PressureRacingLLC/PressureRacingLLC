@@ -39,7 +39,7 @@ def gql(query, **variables):
 PROFILE = """
 query($login: String!) {
   user(login: $login) {
-    createdAt
+    contributionsCollection { contributionYears }
     followers { totalCount }
     pullRequests { totalCount }
     issues { totalCount }
@@ -69,10 +69,11 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
 def collect(login):
     u = gql(PROFILE, login=login)["user"]
     days, commits = {}, 0
-    start = dt.datetime.fromisoformat(u["createdAt"].replace("Z", "+00:00"))
     now = dt.datetime.now(dt.timezone.utc)
-    for year in range(start.year, now.year + 1):
-        frm = max(start, dt.datetime(year, 1, 1, tzinfo=dt.timezone.utc))
+    # Commits count by their author date, which can predate the account, so ask GitHub
+    # which years have contributions instead of starting at createdAt.
+    for year in sorted(u["contributionsCollection"]["contributionYears"]):
+        frm = dt.datetime(year, 1, 1, tzinfo=dt.timezone.utc)
         to = min(now, dt.datetime(year, 12, 31, 23, 59, 59, tzinfo=dt.timezone.utc))
         c = gql(YEAR, login=login, **{"from": frm.isoformat(), "to": to.isoformat()})["user"]["contributionsCollection"]
         commits += c["totalCommitContributions"] + c["restrictedContributionsCount"]
