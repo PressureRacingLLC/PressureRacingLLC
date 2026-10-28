@@ -15,7 +15,7 @@
       </picture>
     </td>
     <td align="center" width="33%">
-      <img src="assets/logos/pr-spin.gif" width="160" alt="Spinning PR monogram with magenta star">
+      <img src="assets/logos/pr-spin.gif" width="110" alt="Spinning PR monogram with magenta star">
     </td>
     <td align="center" width="33%">
       <picture>
