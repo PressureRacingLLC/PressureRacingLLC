@@ -92,8 +92,8 @@ def header():
     w, h = 1600, 440
     im = backdrop(w, h, 7).convert("RGBA")
     glow(im, (330, 215), 230, FLARE, 70)
-    mono = logo("logos/pr-monogram-pink.png", height=300)
-    im.alpha_composite(mono, (330 - mono.width // 2, 70))
+    mono = logo("logos/pr-monogram-white.png", height=290)
+    im.alpha_composite(mono, (330 - mono.width // 2, 74))
     word = logo("logos/pr-wordmark-white.png", width=880)
     top = 84
     im.alpha_composite(word, (600, top))
@@ -122,36 +122,39 @@ def footer():
     im.convert("RGB").save(os.path.join(A, "banners/pr-footer.png"), optimize=True)
 
 
-def readme_spin(size=220):
-    """Transparent spinning PR for the README logo grid (the avatar has an ink fill)."""
+def readme_spin(w=300, h=220):
+    """Spinning PR on an ink tile, matching the logo tiles from build_assets.py."""
     src = r"D:\Pressure\Pressure Racing\Pressure Racing Logo Pack\PR_Spinning.gif"
     with Image.open(src) as g:
         frames = [f.convert("RGBA") for f in ImageSequence.Iterator(g)]
         dur = g.info.get("duration", 30)
     box = (148, 100, 853, 935)  # union of the logo across all frames
-    scale = size * 0.92 / (box[3] - box[1])
+    scale = h * 0.66 / (box[3] - box[1])
+    tile = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    ImageDraw.Draw(tile).rounded_rectangle([0, 0, w - 1, h - 1], radius=14, fill=INK, outline=PLATE, width=2)
+    corners = tile.getchannel("A").point(lambda v: 255 if v < 128 else 0)
+    cx, cy = (box[0] + box[2]) / 2 * scale, (box[1] + box[3]) / 2 * scale
     out = []
     for f in frames[::2]:
         f = f.resize((round(f.width * scale), round(f.height * scale)), Image.Resampling.LANCZOS)
-        c = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-        cx, cy = (box[0] + box[2]) / 2 * scale, (box[1] + box[3]) / 2 * scale
-        c.alpha_composite(f, (round(size / 2 - cx), round(size / 2 - cy)))
-        # GIF has 1-bit alpha: snap so edges stay crisp on both light and dark pages
-        a = c.getchannel("A").point(lambda v: 255 if v > 110 else 0)
-        c.putalpha(a)
-        out.append(c)
+        c = tile.copy()
+        c.alpha_composite(f, (round(w / 2 - cx), round(h / 2 - cy)))
+        out.append(c.convert("RGB"))
+    strip = Image.new("RGB", (w, h * 8))
+    for i, s in enumerate(out[:: max(1, len(out) // 8)][:8]):
+        strip.paste(s, (0, i * h))
+    pal = strip.quantize(colors=63, method=Image.Quantize.MEDIANCUT)
+    palette = pal.getpalette()[: 63 * 3] + [0, 0, 0]
     q = []
-    for c in out:
-        p = c.convert("RGB").quantize(colors=63, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE)
-        pal = p.getpalette()[: 63 * 3] + [0, 0, 0]
-        p.putpalette(pal)
-        mask = c.getchannel("A").point(lambda v: 0 if v else 255)
-        p.paste(63, mask=mask)
+    for o in out:
+        p = o.quantize(palette=pal, dither=Image.Dither.NONE)
+        p.putpalette(palette)
+        p.paste(63, mask=corners)  # rounded corners show the page through
         q.append(p)
-    dst = os.path.join(A, "logos/pr-spin.gif")
+    dst = os.path.join(A, "logos/tiles/pr-spin.gif")
     q[0].save(dst, save_all=True, append_images=q[1:], duration=dur * 2, loop=0,
-              transparency=63, disposal=2, optimize=False)
-    print("pr-spin.gif", len(q), "frames", os.path.getsize(dst) // 1024, "KB")
+              transparency=63, disposal=1, optimize=False)
+    print("tiles/pr-spin.gif", len(q), "frames", os.path.getsize(dst) // 1024, "KB")
 
 
 if __name__ == "__main__":

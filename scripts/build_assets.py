@@ -2,9 +2,14 @@
 
 Originals are only read, never written. Run from the repo root:
     py scripts/build_assets.py
+
+Excluded on purpose: the circle "PR" mark and every file that contains it
+(Final Logo\\Square Logo, Final Logo\\Deccal, Pressure Racing-01 lockups).
 """
+import io
 import os
-from PIL import Image, ImageSequence
+import urllib.request
+from PIL import Image, ImageDraw, ImageSequence
 
 SRC = r"D:\Pressure"
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets")
@@ -14,37 +19,28 @@ LOGOSS = r"Pressure Racing\Pressure Racing LLC\Pressure Logoss"
 STORE = r"pressureracing (2)\pressureracing\pressureracing\storefront\public\brand"
 WEB = r"Website Pictures New"
 
-# (output path, source path, max long edge)
+# How a source is turned white: None = already white, "fill" = every opaque pixel white,
+# "invert" = black linework white while keeping two-tone detail.
+# (output path, source path, max long edge, whitening)
 ASSETS = [
-    # primary marks
-    ("logos/pr-monogram-pink.png", rf"{PACK}\PR_logo_outline_blackwhitepink.png", 512),
-    ("logos/pr-monogram-white.png", rf"{PACK}\PR_logo_outline_white.png", 512),
-    ("logos/pr-monogram-black.png", rf"{LOGOSS}\PR Logo (Outline)\PR_logo.png", 512),
-    ("logos/pr-wordmark-pink.png", rf"{PACK}\PressureRacing_logo_outline_blackwhitepink.png", 900),
-    ("logos/pr-wordmark-white.png", rf"{PACK}\PressureRacing_logo_white.png", 900),
-    ("logos/pr-wordmark-black.png", rf"{LOGOSS}\Pressure Racing OG Logo (Outline)\PR_logType pink star.png", 900),
-    ("logos/pr-circle-white.png", r"Final Logo\Square Logo\Square Logo.png", 432),
-    ("logos/pr-circle-black.png", r"Final Logo\Square Logo\Square Logo Black.png", 432),
-    ("logos/pr-lockup-white.png", r"Final Logo\Deccal\Decal White.png", 864),
-    ("logos/pr-lockup-black.png", r"Final Logo\Deccal\Decal Black.png", 864),
-    ("logos/pr-crosshair-pink.png", rf"{LOGOSS}\CrossHair\Cross Hair New 3.0.png", 512),
-    ("logos/pr-crosshair-black.png", rf"{LOGOSS}\CrossHair\Cross Hair Decal New.png", 512),
-    ("logos/pr-factory-white.png", rf"{STORE}\pressure-factory-racing.png", 900),
-    ("logos/pr-factory-black.png", r"Decal Designs New\Pressure Racing Factory\Factory.png", 900),
-    ("logos/pr-worldwide-white.png", r"Decal Designs New\WorldWide 2\WorldWide_2.png", 512),
-    ("logos/pr-worldwide-black.png", rf"{LOGOSS}\PR WorldWide\PressureWorld 2.png", 512),
-    ("logos/pr-star-pink.png", rf"{LOGOSS}\PR Logo\star rounded.png", 128),
-    # decal artwork (transparent)
-    ("decals/cursive-pressure-white.png", r"Decal Designs New\Cursive Pressure! 2\Cursive_2.png", 900),
-    ("decals/dah-bih-gah-white.png", r"Decal Designs New\Dah Bih Gah!\dahbihgah_stacked.png", 600),
-    ("decals/larp-white.png", r"Decal Designs New\larp\larp.png", 600),
-    ("decals/low-cortisol-white.png", r"Decal Designs New\Low Cortisol\low_cortisol.png", 600),
-    ("decals/worldwide-bubble-white.png", r"Decal Designs New\WorldWide Bubble\WorldWide_Bubble.png", 600),
-    ("decals/flame-black.png", r"Decal Designs New\Pressure Racing Flame\Flame.png", 900),
-    ("decals/collegiate-black.png", r"Decal Designs New\Collegiate Banner\CollegiateBanner.png", 900),
-    ("decals/gothic-black.png", r"Decal Designs New\Gothic Banner\Gothic.png", 900),
-    ("decals/russian-pink.png", r"Decal Designs New\Russian\Russian_Pink.png", 900),
-    ("decals/jack-o-lantern.png", r"Decal Designs New\Jack o Lantern\Jack o Lantern.png", 600),
+    # primary marks, all white
+    ("logos/pr-monogram-white.png", rf"{LOGOSS}\PR Logo\PR_star_white.png", 512, "fill"),
+    ("logos/pr-monogram-outline-white.png", rf"{PACK}\PR_logo_outline_white.png", 512, None),
+    ("logos/pr-wordmark-white.png", rf"{PACK}\PressureRacing_logo_white.png", 900, None),
+    ("logos/pr-crosshair-white.png", rf"{LOGOSS}\CrossHair\Cross Hair New 3.0.png", 512, "fill"),
+    ("logos/pr-factory-white.png", rf"{STORE}\pressure-factory-racing.png", 900, None),
+    ("logos/pr-worldwide-white.png", r"Decal Designs New\WorldWide 2\WorldWide_2.png", 512, None),
+    ("logos/pr-star-pink.png", rf"{LOGOSS}\PR Logo\star rounded.png", 128, None),  # accent glyph, not a logo
+    # decal artwork (transparent), all white
+    ("decals/cursive-pressure-white.png", r"Decal Designs New\Cursive Pressure! 2\Cursive_2.png", 900, None),
+    ("decals/dah-bih-gah-white.png", r"Decal Designs New\Dah Bih Gah!\dahbihgah_stacked.png", 600, None),
+    ("decals/larp-white.png", r"Decal Designs New\larp\larp.png", 600, None),
+    ("decals/low-cortisol-white.png", r"Decal Designs New\Low Cortisol\low_cortisol.png", 600, None),
+    ("decals/worldwide-bubble-white.png", r"Decal Designs New\WorldWide Bubble\WorldWide_Bubble.png", 600, None),
+    ("decals/flame-white.png", r"Decal Designs New\Pressure Racing Flame\Flame.png", 900, "invert"),
+    ("decals/collegiate-white.png", r"Decal Designs New\Collegiate Banner\CollegiateBanner.png", 900, "invert"),
+    ("decals/gothic-white.png", r"Decal Designs New\Gothic Banner\Gothic.png", 900, "invert"),
+    ("decals/russian-white.png", r"Decal Designs New\Russian\Russian_White.png", 900, None),
     # product shots, as listed on the store
     ("merch/pr-12-inch.png", rf"{WEB}\PR 12 Inch\Black.png", 800),
     ("merch/pr-12-inch-chrome.png", rf"{WEB}\PR 12 Inch Chrome\Chrome.png", 800),
@@ -62,9 +58,19 @@ ASSETS = [
     ("merch/url-30-inch.png", rf"{WEB}\URL Decal 30 Inch\All.png", 800),
     ("merch/og-banner.png", rf"{WEB}\OG\All.png", 800),
     ("merch/decal-pack.png", rf"{WEB}\Decal Pack\Decal Pack.png", 800),
-    ("merch/mystery-box.png", rf"{WEB}\Mystery Boxes\Stage 1.png", 800),
-    ("merch/check-engine-3-inch.png", rf"{WEB}\CEL 3 Inch\Yellow.png", 800),
 ]
+
+# Active clothing on pressureracing.com (Shopify product images), shown in "The Brand".
+CDN = "https://cdn.shopify.com/s/files/1/0679/4556/2331/files/"
+SHOP = [
+    ("merch/halloween-tee-black.png", CDN + "Pressure_Pumpkin_Black_Tee_Product_4096px.png?v=1793010930&width=1000"),
+    ("merch/flame-tee-white.png", CDN + "Pressure_Racing_White_Tee_Product_4096px.png?v=1793010930&width=1000"),
+    ("merch/og-hoodie-grey-pink.png", CDN + "Pressure_Racing_Gray_Hoodie_Product_4096px.png?v=1793010240&width=1000"),
+]
+
+# README logo grid: white marks on an ink tile, so they read on GitHub's light theme too.
+TILES = ["pr-monogram-white", "pr-crosshair-white", "pr-wordmark-white", "pr-worldwide-white", "pr-factory-white"]
+TILE = (600, 440)  # 2x for sharp display at 300x220
 
 MAX_BYTES = 500 * 1024
 
@@ -77,12 +83,25 @@ def save_png(im, path):
         q.save(path, optimize=True)
 
 
+def whiten(im, how):
+    if how == "fill":
+        white = Image.new("RGBA", im.size, (255, 255, 255, 255))
+        white.putalpha(im.getchannel("A"))
+        return white
+    if how == "invert":
+        r, g, b, a = im.split()
+        inv = Image.merge("RGB", (r, g, b)).point(lambda v: 255 - v)
+        inv.putalpha(a)
+        return inv
+    return im
+
+
 def build_static():
-    for rel, src, edge in ASSETS:
+    for rel, src, edge, *how in ASSETS:
         dst = os.path.join(OUT, rel)
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         with Image.open(os.path.join(SRC, src)) as im:
-            im = im.convert("RGBA")
+            im = whiten(im.convert("RGBA"), how[0] if how else None)
             bbox = im.getchannel("A").getbbox()
             if bbox and bbox != (0, 0, im.width, im.height):
                 pad = max(4, int(max(im.size) * 0.01))
@@ -95,21 +114,37 @@ def build_static():
 
 
 INK = (10, 11, 15)
-CHALK = (242, 240, 236)
+PLATE = (42, 47, 62)
 
 
-def build_dark_variants():
-    """Dark-mode copies: near-black linework becomes chalk so it reads on GitHub's dark theme."""
-    for src, dst in [("logos/pr-crosshair-pink.png", "logos/pr-crosshair-pink-dark.png")]:
-        im = Image.open(os.path.join(OUT, src)).convert("RGBA")
-        px = im.load()
-        for y in range(im.height):
-            for x in range(im.width):
-                r, g, b, a = px[x, y]
-                if a and max(r, g, b) < 90:
-                    px[x, y] = CHALK + (a,)
-        save_png(im, os.path.join(OUT, dst))
-        print(f"{dst:42s} (dark variant)")
+def build_shop():
+    for rel, url in SHOP:
+        dst = os.path.join(OUT, rel)
+        with urllib.request.urlopen(url, timeout=60) as r:
+            im = Image.open(io.BytesIO(r.read())).convert("RGB")
+        im.thumbnail((400, 400), Image.Resampling.LANCZOS)  # shown at 180px; 2x for retina, light on page weight
+        save_png(im, dst)
+        print(f"{rel:42s} {im.width}x{im.height}  {os.path.getsize(dst) // 1024} KB")
+
+
+def tile_base():
+    w, h = TILE
+    t = Image.new("RGBA", TILE, (0, 0, 0, 0))
+    ImageDraw.Draw(t).rounded_rectangle([1, 1, w - 2, h - 2], radius=28, fill=INK, outline=PLATE, width=3)
+    return t
+
+
+def build_tiles():
+    os.makedirs(os.path.join(OUT, "logos", "tiles"), exist_ok=True)
+    w, h = TILE
+    for name in TILES:
+        logo = Image.open(os.path.join(OUT, "logos", f"{name}.png")).convert("RGBA")
+        logo.thumbnail((int(w * 0.72), int(h * 0.62)), Image.Resampling.LANCZOS)
+        t = tile_base()
+        t.alpha_composite(logo, ((w - logo.width) // 2, (h - logo.height) // 2))
+        dst = os.path.join(OUT, "logos", "tiles", f"{name}.png")
+        save_png(t, dst)
+        print(f"tiles/{name}.png  {os.path.getsize(dst) // 1024} KB")
 
 
 def build_avatar(size=500, logo_h=0.64, step=1, colors=128):
@@ -151,6 +186,7 @@ def build_avatar(size=500, logo_h=0.64, step=1, colors=128):
 
 if __name__ == "__main__":
     build_static()
-    build_dark_variants()
+    build_shop()
+    build_tiles()
     # 2 of 3 frames at 420px lands ~900 KB, safely under GitHub's 1 MB avatar cap
     build_avatar(size=420, step=1.5, colors=48)

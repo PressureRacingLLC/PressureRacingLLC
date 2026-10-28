@@ -1,4 +1,4 @@
-# Builds the contribution snake and the stat cards, then publishes them to the `output` branch.
+# Builds the stat cards, then publishes them to the `output` branch.
 # README.md loads them from raw.githubusercontent.com/<owner>/<repo>/output/...
 name: Profile assets
 
@@ -23,14 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-
-      - name: Contribution snake
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg?palette=github-light&color_snake=#c000ae&color_dots=#ece9e2,#f6b3ee,#ee66de,#d600c4,#8a007e
-            dist/github-snake-dark.svg?palette=github-dark&color_snake=#f800e0&color_dots=#161923,#4a0a45,#86007a,#c400b2,#f800e0
 
       - uses: actions/setup-python@v6
         with:

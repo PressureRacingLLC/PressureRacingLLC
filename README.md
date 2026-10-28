@@ -3,46 +3,23 @@
 </p>
 
 <p align="center">
+  <img src="assets/animations/pr-intake.gif" width="100%" alt="The PR logo is pulled into a spinning compressor wheel, boosts, and pops back out">
+</p>
+
+<p align="center">
   <a href="https://pressureracing.com"><img src="https://readme-typing-svg.demolab.com?font=Archivo&weight=800&size=26&duration=2600&pause=900&color=F800E0&center=true&vCenter=true&width=560&lines=PRESSURE+RACING;AUTOMOTIVE+RACING+BRAND;IN+PRESSURE+WE+TRUST" alt="Pressure Racing. Automotive Racing Brand. In Pressure We Trust."></a>
 </p>
 
 <table align="center">
   <tr>
-    <td align="center" width="33%">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-circle-white.png">
-        <img src="assets/logos/pr-circle-black.png" width="120" alt="Pressure Racing circle monogram">
-      </picture>
-    </td>
-    <td align="center" width="33%">
-      <img src="assets/logos/pr-spin.gif" width="110" alt="Spinning PR monogram with magenta star">
-    </td>
-    <td align="center" width="33%">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-crosshair-pink-dark.png">
-        <img src="assets/logos/pr-crosshair-black.png" width="120" alt="Pressure Racing crosshair mark">
-      </picture>
-    </td>
+    <td align="center" width="33%"><img src="assets/logos/tiles/pr-monogram-white.png" width="200" alt="PR monogram with star, white"></td>
+    <td align="center" width="33%"><img src="assets/logos/tiles/pr-spin.gif" width="200" alt="Spinning PR monogram"></td>
+    <td align="center" width="33%"><img src="assets/logos/tiles/pr-crosshair-white.png" width="200" alt="Pressure Racing crosshair mark, white"></td>
   </tr>
   <tr>
-    <td align="center" width="33%">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-wordmark-pink.png">
-        <img src="assets/logos/pr-wordmark-black.png" width="180" alt="Pressure Racing script wordmark">
-      </picture>
-    </td>
-    <td align="center" width="33%">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-worldwide-white.png">
-        <img src="assets/logos/pr-worldwide-black.png" width="120" alt="Pressure Racing WorldWide globe mark">
-      </picture>
-    </td>
-    <td align="center" width="33%">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-factory-white.png">
-        <img src="assets/logos/pr-factory-black.png" width="180" alt="Pressure! Racing Factory lockup">
-      </picture>
-    </td>
+    <td align="center" width="33%"><img src="assets/logos/tiles/pr-wordmark-white.png" width="200" alt="Pressure Racing script wordmark, white"></td>
+    <td align="center" width="33%"><img src="assets/logos/tiles/pr-worldwide-white.png" width="200" alt="Pressure Racing WorldWide globe mark, white"></td>
+    <td align="center" width="33%"><img src="assets/logos/tiles/pr-factory-white.png" width="200" alt="Pressure! Racing Factory lockup, white"></td>
   </tr>
 </table>
 
@@ -64,9 +41,9 @@
 
 <table align="center">
   <tr>
-    <td align="center" width="33%"><a href="https://pressureracing.com/shop"><img src="assets/merch/pr-12-inch.png" width="180" alt="PR monogram decal, 12 inch"></a><br><sub><b>PR 12"</b></sub></td>
-    <td align="center" width="33%"><a href="https://pressureracing.com/shop"><img src="assets/merch/worldwide-12-inch.png" width="180" alt="WorldWide globe decal, 12 inch"></a><br><sub><b>WORLDWIDE 12"</b></sub></td>
-    <td align="center" width="33%"><a href="https://pressureracing.com/shop"><img src="assets/merch/crosshair-20-inch.png" width="180" alt="Crosshair decal, 20 inch"></a><br><sub><b>CROSSHAIR 20"</b></sub></td>
+    <td align="center" width="33%"><a href="https://pressureracing.com/products/pressure-racing-halloween-tee-black"><img src="assets/merch/halloween-tee-black.png" width="180" alt="Pressure Racing Halloween Tee, black"></a><br><sub><b>HALLOWEEN TEE</b></sub></td>
+    <td align="center" width="33%"><a href="https://pressureracing.com/products/pressure-racing-flame-tee-white"><img src="assets/merch/flame-tee-white.png" width="180" alt="Pressure Racing Flame Tee, white"></a><br><sub><b>FLAME TEE</b></sub></td>
+    <td align="center" width="33%"><a href="https://pressureracing.com/products/pressure-racing-og-hoodie-grey-pink"><img src="assets/merch/og-hoodie-grey-pink.png" width="180" alt="Pressure Racing OG Hoodie, grey and pink"></a><br><sub><b>OG HOODIE</b></sub></td>
   </tr>
 </table>
 
@@ -80,33 +57,28 @@
   <br>
   <table align="center">
     <tr>
-      <td align="center"><img src="assets/merch/pr-12-inch-chrome.png" width="160" alt="PR decal, chrome"></td>
-      <td align="center"><img src="assets/merch/flame-7-inch.png" width="160" alt="Flame decal, 7 inch"></td>
-      <td align="center"><img src="assets/merch/factory-7-inch.png" width="160" alt="Factory decal, 7 inch"></td>
-      <td align="center"><img src="assets/merch/og-banner.png" width="160" alt="OG script banner"></td>
+      <td align="center" width="25%"><img src="assets/merch/pr-12-inch.png" width="160" alt="PR decal, 12 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/pr-12-inch-chrome.png" width="160" alt="PR decal, chrome"></td>
+      <td align="center" width="25%"><img src="assets/merch/worldwide-12-inch.png" width="160" alt="WorldWide globe decal, 12 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/crosshair-20-inch.png" width="160" alt="Crosshair decal, 20 inch"></td>
     </tr>
     <tr>
-      <td align="center"><img src="assets/merch/collegiate-30-inch.png" width="160" alt="Collegiate banner, 30 inch"></td>
-      <td align="center"><img src="assets/merch/gothic-30-inch.png" width="160" alt="Gothic banner, 30 inch"></td>
-      <td align="center"><img src="assets/merch/url-30-inch.png" width="160" alt="URL banner, 30 inch"></td>
-      <td align="center"><img src="assets/merch/russian-7-inch.png" width="160" alt="Russian script decal, 7 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/flame-7-inch.png" width="160" alt="Flame decal, 7 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/factory-7-inch.png" width="160" alt="Factory decal, 7 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/og-banner.png" width="160" alt="OG script banner"></td>
+      <td align="center" width="25%"><img src="assets/merch/url-30-inch.png" width="160" alt="URL banner, 30 inch"></td>
     </tr>
     <tr>
-      <td align="center"><img src="assets/merch/dah-bih-gah-7-inch.png" width="160" alt="Dah Bih Gah! decal"></td>
-      <td align="center"><img src="assets/merch/larp.png" width="160" alt="larp! decal"></td>
-      <td align="center"><img src="assets/merch/low-cortisol-7-inch.png" width="160" alt="Low Cortisol gauge decal"></td>
-      <td align="center"><img src="assets/merch/lighter-3-inch.png" width="160" alt="Lighter decal, 3 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/collegiate-30-inch.png" width="160" alt="Collegiate banner, 30 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/gothic-30-inch.png" width="160" alt="Gothic banner, 30 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/russian-7-inch.png" width="160" alt="Russian script decal, 7 inch"></td>
+      <td align="center" width="25%"><img src="assets/merch/decal-pack.png" width="160" alt="Decal pack"></td>
     </tr>
     <tr>
-      <td align="center"><img src="assets/merch/check-engine-3-inch.png" width="160" alt="Check engine light decal"></td>
-      <td align="center"><img src="assets/merch/decal-pack.png" width="160" alt="Decal pack"></td>
-      <td align="center"><img src="assets/merch/mystery-box.png" width="160" alt="Mystery box, stage 1"></td>
-      <td align="center">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-lockup-white.png">
-          <img src="assets/logos/pr-lockup-black.png" width="160" alt="Pressure Racing circle lockup">
-        </picture>
-      </td>
+      <td align="center" width="25%"><img src="assets/merch/dah-bih-gah-7-inch.png" width="160" alt="Dah Bih Gah! decal"></td>
+      <td align="center" width="25%"><img src="assets/merch/larp.png" width="160" alt="larp! decal"></td>
+      <td align="center" width="25%"><img src="assets/merch/low-cortisol-7-inch.png" width="160" alt="Low Cortisol gauge decal"></td>
+      <td align="center" width="25%"><img src="assets/merch/lighter-3-inch.png" width="160" alt="Lighter decal, 3 inch"></td>
     </tr>
   </table>
 </details>
@@ -146,13 +118,6 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/activity-dark.svg">
     <img src="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/activity-light.svg" width="780" alt="Contribution activity over the last 31 days">
-  </picture>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/github-snake-dark.svg">
-    <img src="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/github-snake.svg" width="780" alt="Contribution graph being eaten by a snake">
   </picture>
 </p>
 
