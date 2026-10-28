@@ -19,7 +19,7 @@
     </td>
     <td align="center" width="200">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-crosshair-pink.png">
+        <source media="(prefers-color-scheme: dark)" srcset="assets/logos/pr-crosshair-pink-dark.png">
         <img src="assets/logos/pr-crosshair-black.png" width="120" alt="Pressure Racing crosshair mark">
       </picture>
     </td>
@@ -115,7 +115,7 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts,react,vite,threejs,tailwind,java,maven,nodejs,graphql,githubactions&theme=dark&perline=10">
+    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Creact%2Cvite%2Cthreejs%2Ctailwind%2Cjava%2Cmaven%2Cnodejs%2Cgraphql%2Cgithubactions&theme=dark&perline=10">
     <img src="https://skillicons.dev/icons?i=ts,react,vite,threejs,tailwind,java,maven,nodejs,graphql,githubactions&theme=light&perline=10" alt="TypeScript, React, Vite, Three.js, Tailwind CSS, Java, Maven, Node.js, GraphQL, GitHub Actions">
   </picture>
   <br>

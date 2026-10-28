@@ -95,6 +95,21 @@ def build_static():
 
 
 INK = (10, 11, 15)
+CHALK = (242, 240, 236)
+
+
+def build_dark_variants():
+    """Dark-mode copies: near-black linework becomes chalk so it reads on GitHub's dark theme."""
+    for src, dst in [("logos/pr-crosshair-pink.png", "logos/pr-crosshair-pink-dark.png")]:
+        im = Image.open(os.path.join(OUT, src)).convert("RGBA")
+        px = im.load()
+        for y in range(im.height):
+            for x in range(im.width):
+                r, g, b, a = px[x, y]
+                if a and max(r, g, b) < 90:
+                    px[x, y] = CHALK + (a,)
+        save_png(im, os.path.join(OUT, dst))
+        print(f"{dst:42s} (dark variant)")
 
 
 def build_avatar(size=500, logo_h=0.64, step=1, colors=128):
@@ -136,5 +151,6 @@ def build_avatar(size=500, logo_h=0.64, step=1, colors=128):
 
 if __name__ == "__main__":
     build_static()
+    build_dark_variants()
     # 2 of 3 frames at 420px lands ~900 KB, safely under GitHub's 1 MB avatar cap
     build_avatar(size=420, step=1.5, colors=48)
