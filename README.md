@@ -125,7 +125,7 @@
 
 <!-- YOUTUBE:START -->
 <table align="center"><tr>
-<td align="center" width="33%"><a href="https://www.youtube.com/watch?v=yTfLk1X73lU"><img src="https://i.ytimg.com/vi/yTfLk1X73lU/hqdefault.jpg" width="260" alt="SCRAPEFEST 2026"></a><br><sub><b>SCRAPEFEST 2026</b></sub></td>
+<td align="center" width="33%"><a href="https://www.youtube.com/watch?v=yTfLk1X73lU"><img src="https://i.ytimg.com/vi/yTfLk1X73lU/hqdefault.jpg" width="260" alt="SCRAPEFEST 2026 | Vlog 18"></a><br><sub><b>SCRAPEFEST 2026 | Vlog 18</b></sub></td>
 <td align="center" width="33%"><a href="https://www.youtube.com/shorts/ap9_dmQtqxU"><img src="https://i.ytimg.com/vi/ap9_dmQtqxU/hqdefault.jpg" width="260" alt="August 26, 2026"></a><br><sub><b>August 26, 2026</b></sub></td>
 <td align="center" width="33%"><a href="https://www.youtube.com/shorts/ax7Ka_k6rM0"><img src="https://i.ytimg.com/vi/ax7Ka_k6rM0/hqdefault.jpg" width="260" alt="Honda Civic Turbo"></a><br><sub><b>Honda Civic Turbo</b></sub></td>
 </tr></table>
