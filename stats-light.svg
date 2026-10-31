@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="210" viewBox="0 0 480 210" role="img" aria-label="GitHub stats">
+<title>GitHub stats</title>
+<rect x="0.5" y="0.5" width="479" height="209" rx="10" fill="#f7f5f0" stroke="#d6d2c8"/>
+<rect x="0.5" y="0.5" width="6" height="209" rx="3" fill="#c000ae"/>
+<text x="26" y="36" font-family="'Archivo','Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="2.4" fill="#0a0b0f">GITHUB STATS</text>
+<path d="M440 22 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill="#c000ae"/>
+<text x="26" y="78" font-family="'Martian Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="1" fill="#3a4152">TOTAL STARS</text>
+<text x="26" y="100" font-family="'Archivo','Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#0a0b0f">0</text>
+<text x="256" y="78" font-family="'Martian Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="1" fill="#3a4152">COMMITS</text>
+<text x="256" y="100" font-family="'Archivo','Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#0a0b0f">8</text>
+<text x="26" y="120" font-family="'Martian Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="1" fill="#3a4152">PULL REQUESTS</text>
+<text x="26" y="142" font-family="'Archivo','Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#0a0b0f">0</text>
+<text x="256" y="120" font-family="'Martian Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="1" fill="#3a4152">ISSUES</text>
+<text x="256" y="142" font-family="'Archivo','Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#0a0b0f">0</text>
+<text x="26" y="162" font-family="'Martian Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="1" fill="#3a4152">CONTRIBUTED TO</text>
+<text x="26" y="184" font-family="'Archivo','Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#0a0b0f">0</text>
+<text x="256" y="162" font-family="'Martian Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="11" letter-spacing="1" fill="#3a4152">REPOSITORIES</text>
+<text x="256" y="184" font-family="'Archivo','Segoe UI',Ubuntu,'Helvetica Neue',Arial,sans-serif" font-size="20" font-weight="800" fill="#0a0b0f">1</text>
+</svg>
