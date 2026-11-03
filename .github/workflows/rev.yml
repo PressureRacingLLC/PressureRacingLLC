@@ -1,0 +1,56 @@
+# Community rev counter. The README's REV IT button opens an issue titled "rev|throttle";
+# this counts it, redraws assets/live/revs.svg, then thanks the visitor and closes the issue.
+name: Rev it
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: rev
+  cancel-in-progress: false
+
+jobs:
+  rev:
+    if: startsWith(github.event.issue.title, 'rev|')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install --quiet fonttools brotli
+
+      - name: Count the rev
+        run: python scripts/revs.py "$DRIVER"
+        env:
+          DRIVER: ${{ github.event.issue.user.login }}
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/revs.json assets/live/revs.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "Rev counter: +1 from @$DRIVER"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && exit 0; sleep 3; done
+          exit 1
+        env:
+          DRIVER: ${{ github.event.issue.user.login }}
+
+      - name: Thank and close
+        run: |
+          gh issue comment "$NUM" --body "Revved. You're on the board. Head back to the profile to see the counter: https://github.com/${{ github.repository_owner }}"
+          gh issue close "$NUM"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          NUM: ${{ github.event.issue.number }}

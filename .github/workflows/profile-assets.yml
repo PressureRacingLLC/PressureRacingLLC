@@ -1,5 +1,5 @@
-# Builds the stat cards, then publishes them to the `output` branch.
-# README.md loads them from raw.githubusercontent.com/<owner>/<repo>/output/...
+# Builds the telemetry gauge cluster (dash.svg), then publishes it to the `output` branch.
+# README.md loads it from raw.githubusercontent.com/<owner>/<repo>/output/dash.svg
 name: Profile assets
 
 on:
@@ -9,6 +9,8 @@ on:
   push:
     paths:
       - scripts/stats.py
+      - tools/svgkit.py
+      - tools/fonts/**
       - .github/workflows/profile-assets.yml
 
 permissions:
@@ -28,7 +30,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Stat cards
+      - run: pip install --quiet fonttools brotli
+
+      - name: Gauge cluster
         run: python scripts/stats.py "${{ github.repository_owner }}" dist
         env:
           # Optional METRICS_TOKEN (classic PAT: read:user + repo) adds private-repo languages.

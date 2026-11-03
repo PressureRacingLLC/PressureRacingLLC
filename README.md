@@ -7,8 +7,10 @@
 </p>
 
 <p align="center">
-  <a href="https://pressureracing.com"><img src="https://readme-typing-svg.demolab.com?font=Archivo&weight=800&size=26&duration=2600&pause=900&color=F800E0&center=true&vCenter=true&width=560&lines=PRESSURE+RACING;AUTOMOTIVE+RACING+BRAND;IN+PRESSURE+WE+TRUST" alt="Pressure Racing. Automotive Racing Brand. In Pressure We Trust."></a>
+  <a href="https://pressureracing.com"><img src="assets/svg/ecu-boot.svg" width="100%" alt="ECU boot screen: key on, fuel pump OK, boost control armed, launch control set. Pressure Racing, Automotive Racing Brand."></a>
 </p>
+
+<p align="center"><img src="assets/svg/sec-garage.svg" width="100%" alt="01 The Garage"></p>
 
 <table align="center">
   <tr>
@@ -24,18 +26,16 @@
 </table>
 
 <p align="center">
-  <a href="https://pressureracing.com"><img src="https://img.shields.io/badge/Website-pressureracing.com-f800e0?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=0a0b0f" alt="Website: pressureracing.com"></a>
-  <a href="https://www.instagram.com/pressureracinggarage/"><img src="https://img.shields.io/badge/Instagram-%40pressureracinggarage-f800e0?style=for-the-badge&logo=instagram&logoColor=white&labelColor=0a0b0f" alt="Instagram: @pressureracinggarage"></a>
-  <a href="https://www.tiktok.com/@pressureracing"><img src="https://img.shields.io/badge/TikTok-%40pressureracing-f800e0?style=for-the-badge&logo=tiktok&logoColor=white&labelColor=0a0b0f" alt="TikTok: @pressureracing"></a>
-  <a href="https://www.youtube.com/channel/UCQQfmcguM0ptKZTCPkl1s0A"><img src="https://img.shields.io/badge/YouTube-Pressure%20Racing-f800e0?style=for-the-badge&logo=youtube&logoColor=white&labelColor=0a0b0f" alt="YouTube: Pressure Racing"></a>
-  <a href="https://github.com/PressureRacingLLC"><img src="https://img.shields.io/badge/GitHub-PressureRacingLLC-f800e0?style=for-the-badge&logo=github&logoColor=white&labelColor=0a0b0f" alt="GitHub: PressureRacingLLC"></a>
+  <a href="https://pressureracing.com"><img src="assets/svg/btn-web.svg" width="150" alt="Website: pressureracing.com"></a>
+  <a href="https://www.instagram.com/pressureracinggarage/"><img src="assets/svg/btn-instagram.svg" width="150" alt="Instagram: @pressureracinggarage"></a>
+  <a href="https://www.tiktok.com/@pressureracing"><img src="assets/svg/btn-tiktok.svg" width="150" alt="TikTok: @pressureracing"></a>
+  <a href="https://www.youtube.com/channel/UCQQfmcguM0ptKZTCPkl1s0A"><img src="assets/svg/btn-youtube.svg" width="150" alt="YouTube: Pressure Racing"></a>
+  <a href="https://github.com/PressureRacingLLC"><img src="assets/svg/btn-github.svg" width="150" alt="GitHub: PressureRacingLLC"></a>
 </p>
-
-<h3 align="center"><img src="assets/logos/pr-star-pink.png" width="16" alt="star"> ABOUT</h3>
 
 <p align="center"><b>Automotive Racing Brand</b></p>
 
-<h3 align="center"><img src="assets/logos/pr-star-pink.png" width="16" alt="star"> THE BRAND</h3>
+<p align="center"><img src="assets/svg/sec-brand.svg" width="100%" alt="02 The Brand"></p>
 
 <p align="center"><i>“Keep racing culture alive — on the street, at the track, and in what we wear.”</i></p>
 
@@ -83,7 +83,7 @@
   </table>
 </details>
 
-<h3 align="center"><img src="assets/logos/pr-star-pink.png" width="16" alt="star"> TECH STACK</h3>
+<p align="center"><img src="assets/svg/sec-parts.svg" width="100%" alt="03 Parts List"></p>
 
 <p align="center">
   <picture>
@@ -94,34 +94,25 @@
   <img src="https://img.shields.io/badge/Shopify%20Hydrogen-0a0b0f?style=for-the-badge&logo=shopify&logoColor=f800e0" alt="Shopify Hydrogen">
 </p>
 
-<h3 align="center"><img src="assets/logos/pr-star-pink.png" width="16" alt="star"> STATS</h3>
+<p align="center"><img src="assets/svg/sec-telemetry.svg" width="100%" alt="04 Telemetry"></p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/stats-dark.svg">
-    <img src="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/stats-light.svg" width="480" alt="GitHub stats: stars, commits, pull requests, issues, repositories">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/langs-dark.svg">
-    <img src="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/langs-light.svg" width="300" alt="Top languages">
-  </picture>
+  <img src="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/dash.svg" width="100%" alt="GitHub telemetry gauge cluster: contributions, streak and commits gauges, language mix, 31-day activity and totals">
+</p>
+
+<p align="center"><img src="assets/svg/sec-rev.svg" width="100%" alt="05 Rev It"></p>
+
+<p align="center">
+  <img src="assets/live/revs.svg" width="100%" alt="Community rev counter with the latest visitors who revved the engine">
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/streak-dark.svg">
-    <img src="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/streak-light.svg" width="780" alt="Contribution streak">
-  </picture>
+  <a href="https://github.com/PressureRacingLLC/PressureRacingLLC/issues/new?title=rev%7Cthrottle&body=Just%20hit%20Create.%20The%20pit%20crew%20does%20the%20rest."><img src="assets/svg/btn-rev.svg" width="300" alt="Rev it: press to hit the limiter"></a>
+  <br>
+  <sub>Opens a pre-filled issue. Hit <b>Create</b> and the counter updates in about a minute.</sub>
 </p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/activity-dark.svg">
-    <img src="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/activity-light.svg" width="780" alt="Contribution activity over the last 31 days">
-  </picture>
-</p>
-
-<h3 align="center"><img src="assets/logos/pr-star-pink.png" width="16" alt="star"> LATEST VIDEOS</h3>
+<p align="center"><img src="assets/svg/sec-onboard.svg" width="100%" alt="06 On Board"></p>
 
 <!-- YOUTUBE:START -->
 <table align="center"><tr>
