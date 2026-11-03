@@ -129,31 +129,30 @@ def switch(slug, label, sub, accent=FLARE):
     save(f"btn-{slug}.svg", svg_doc(w, h, "".join(body), f"{label}: {sub}", style))
 
 
-def rev_button():
+def pull_up_button():
     w, h = 360, 92
     body = [
         f'<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="16" fill="{FLARE_DEEP}" stroke="{FLARE}" stroke-width="2"/>',
         f'<rect class="hot" x="8" y="8" width="{w - 16}" height="{h - 16}" rx="11" fill="{FLARE}"/>',
-        text("REV IT", 34, 54, "display", 36, INK, 2),
-        text("PRESS TO HIT THE LIMITER", 36, 75, "mono-bold", 10, INK, 1.6),
-        # throttle arrows
-        "".join(f'<polygon class="a{i}" points="{250 + i * 26},28 {268 + i * 26},46 {250 + i * 26},64 {240 + i * 26},64 {258 + i * 26},46 {240 + i * 26},28" fill="{INK}"/>'
-                for i in range(3)),
+        text("PULL UP", 34, 54, "display", 36, INK, 2),
+        text("PARK YOUR NAME IN THE LOT", 36, 75, "mono-bold", 10, INK, 1.6),
+        # hazard pair, blinking together
+        f'<g class="hz"><polygon points="292,30 312,64 272,64" fill="none" stroke="{INK}" stroke-width="4" stroke-linejoin="round"/>'
+        f'<polygon points="292,42 302,59 282,59" fill="{INK}"/></g>',
     ]
     style = (REDUCED_MOTION + "@keyframes hot{50%{fill:#ff4dec}}.hot{animation:hot 1.6s ease-in-out infinite}"
-             "@keyframes a{0%,100%{opacity:.25}40%{opacity:1}}"
-             + "".join(f".a{i}{{animation:a 1.2s {i * 0.18:.2f}s infinite}}" for i in range(3)))
-    save("btn-rev.svg", svg_doc(w, h, "".join(body), "Rev it: press to hit the limiter", style))
+             "@keyframes hz{50%{opacity:.2}}.hz{animation:hz 1s steps(1) infinite}")
+    save("btn-pull-up.svg", svg_doc(w, h, "".join(body), "Pull up: park your name in the lot", style))
 
 
 if __name__ == "__main__":
     ecu_boot()
     for num, title, slug in [("01", "THE GARAGE", "garage"), ("02", "THE BRAND", "brand"), ("03", "PARTS LIST", "parts"),
-                             ("04", "TELEMETRY", "telemetry"), ("05", "REV IT", "rev"), ("06", "ON BOARD", "onboard")]:
+                             ("04", "TELEMETRY", "telemetry"), ("05", "THE LOT", "lot"), ("06", "ON BOARD", "onboard")]:
         plate(num, title, slug)
     switch("web", "WEBSITE", "pressureracing.com")
     switch("instagram", "INSTAGRAM", "@pressureracinggarage")
     switch("tiktok", "TIKTOK", "@pressureracing")
     switch("youtube", "YOUTUBE", "Pressure Racing")
     switch("github", "GITHUB", "PressureRacingLLC", COOLANT)
-    rev_button()
+    pull_up_button()

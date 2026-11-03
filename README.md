@@ -100,16 +100,16 @@
   <img src="https://raw.githubusercontent.com/PressureRacingLLC/PressureRacingLLC/output/dash.svg" width="100%" alt="GitHub telemetry gauge cluster: contributions, streak and commits gauges, language mix, 31-day activity and totals">
 </p>
 
-<p align="center"><img src="assets/svg/sec-rev.svg" width="100%" alt="05 Rev It"></p>
+<p align="center"><img src="assets/svg/sec-lot.svg" width="100%" alt="05 The Lot"></p>
 
 <p align="center">
-  <img src="assets/live/revs.svg" width="100%" alt="Community rev counter with the latest visitors who revved the engine">
+  <img src="assets/live/lot.svg" width="100%" alt="The Lot: a top-down meet lot with the names of visitors who pulled up">
 </p>
 
 <p align="center">
-  <a href="https://github.com/PressureRacingLLC/PressureRacingLLC/issues/new?title=rev%7Cthrottle&body=Just%20hit%20Create.%20The%20pit%20crew%20does%20the%20rest."><img src="assets/svg/btn-rev.svg" width="300" alt="Rev it: press to hit the limiter"></a>
+  <a href="https://github.com/PressureRacingLLC/PressureRacingLLC/issues/new?title=pull-up%7Clot&body=Submit%20to%20park%20in%20the%20lot."><img src="assets/svg/btn-pull-up.svg" width="300" alt="Pull up: park your name in the lot"></a>
   <br>
-  <sub>Opens a pre-filled issue. Hit <b>Create</b> and the counter updates in about a minute.</sub>
+  <sub>Opens a pre-filled issue. Submit it and you're parked in spot 01 within a minute.</sub>
 </p>
 
 <p align="center"><img src="assets/svg/sec-onboard.svg" width="100%" alt="06 On Board"></p>
