@@ -1,5 +1,12 @@
 {
-  "total": 0,
-  "parked": [],
-  "visits": {}
+  "total": 1,
+  "parked": [
+    {
+      "login": "PressureRacingLLC",
+      "at": "2026-11-03T10:36:41+00:00"
+    }
+  ],
+  "visits": {
+    "PressureRacingLLC": 1
+  }
 }
